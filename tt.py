@@ -39,7 +39,7 @@ cxkey = seekdata[seekdata.find(seekbeatcx) + 38:seekdata.find("<input name='cof'
 songstring = songstring.replace(' ', '%20')
 seeksearchurl = 'http://www.seekmybeat.com/?cx=' + cxkey + '%3Ak0r-dag7ms0&cof=FORID%3A10&ie=UTF-8&q=' + songstring + '&sa=+++Seek+My+Beat+++'
 
-googlesearch = "http://www.google.com/cse?cx=002036694685951044239%3Ak0r-dag7ms0&cof=FORID%3A10&ie=UTF-8&q="+songstring+"&sa=+++Seek+My+Beat+++&ad=n9&num=10"
+googlesearch = "http://www.google.com/cse?cx="+cxkey+"%3Ak0r-dag7ms0&cof=FORID%3A10&ie=UTF-8&q="+songstring+"&sa=+++Seek+My+Beat+++&ad=n9&num=10"
 
 c.setopt(pycurl.URL, googlesearch)
 seekraw = StringIO.StringIO()
@@ -51,4 +51,4 @@ end = 'onmousedown="return curwt'
 dllink1 = seekraw[seekraw.find(begin) + 19:seekraw.find(end) - 2]
 print 'Download Link Found: ' + dllink1 + '\n'
 print "Note: this application's author is not liable nor can guarantee accuracy for the above link"
-
+print 'All search results can be found here: \n' + googlesearch
